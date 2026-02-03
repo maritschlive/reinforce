@@ -35,9 +35,10 @@ def main():
 class PolicyNet(nn.Module):
     def __init__(self, n_states, n_actions):
         super(PolicyNet, self).__init__()
-        # TODO: Define required layers for your neural net here
 
-        self.model = ...
+        self.fc1 = nn.Linear(n_states, 128)
+        self.fc2 = nn.Linear(128, n_actions)
+
         self.train()  # set training mode
 
     def forward(self, x):
